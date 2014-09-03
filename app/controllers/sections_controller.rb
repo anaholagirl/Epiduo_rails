@@ -25,4 +25,19 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     render('sections/show.html.erb')
   end
+
+  def edit
+    @section = Section.find(params[:id])
+    render('sections/edit.html.erb')
+  end
+
+  def update
+    @section = Section.find(params[:id])
+      if @section.update(params[:section])
+        flash[:notice] = "Update was successful!"
+        redirect_to('/sections/#{@section.id}')
+      else
+        render('sections/edit.html.erb')
+      end
+  end
 end
