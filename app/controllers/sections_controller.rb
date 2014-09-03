@@ -40,4 +40,11 @@ class SectionsController < ApplicationController
         render('sections/edit.html.erb')
       end
   end
+
+  def destroy
+    @section = Section.find(params[:id])
+    @section.destroy
+    flash[:notice] = "Section has been successfully removed!"
+    redirect_to('/sections')
+  end
 end
