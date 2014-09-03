@@ -1,4 +1,4 @@
-class Section < ActiveRecord::Base
+class Chapter < ActiveRecord::Base
 
   validates :name, :presence => true
 end
