@@ -1,2 +1,15 @@
 <h1> Create a new section </h1>
 
+<% if @section.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @section.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/sections/<%= @section.id %>" method="post">
+  <label for="section_name">Section Name</label>
+  <input id="section_name" name="section[name]" type="text" value="<%= @section.name %>">
+  <button class=btn btn-small btn-primary>Create Section</button>

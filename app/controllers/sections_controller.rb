@@ -7,7 +7,7 @@ class SectionsController < ApplicationController
   end
 
   def new
-    @section = Section.new
+    @section = Section.new(params[:section])
     render('sections/new.html.erb')
   end
 
@@ -15,7 +15,7 @@ class SectionsController < ApplicationController
     @section = Section.create(params[:section])
       if @section.save
         flash[:notice] = "Section was successfully added!"
-        redirect_to('/sections/#{@section.id}')
+        redirect_to("/sections")
       else
         render('sections/new.html.erb')
       end
@@ -35,7 +35,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
       if @section.update(params[:section])
         flash[:notice] = "Update was successful!"
-        redirect_to('/sections/#{@section.id}')
+        redirect_to("/sections/#{@section.id}")
       else
         render('sections/edit.html.erb')
       end
