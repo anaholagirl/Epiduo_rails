@@ -1,6 +1,9 @@
 class LessonsController < ApplicationController
 
-  def toc
+  def index
     @lessons = Lessons.all
-    render ('lessons/toc.html.erb')
+    render ('lessons/index.html.erb')
   end
+
+
+
