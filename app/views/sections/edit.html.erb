@@ -16,6 +16,19 @@
   <button class='btn btn-success'>Update Section</button>
 </form>
 
+<h2>Choose a Lesson to add to this Section:</h2>
+<div style="padding-bottom:20">
+  <form id="sections" role="form" action="/sections" method="post">
+    <h3>Lessons: <select form="lessons" name="lesson[section_id]" style="width:250px;margin-right:20px">
+    <% @lessons.each do |lesson| %>
+      <option value="<%=lesson.id %>"> <%= lesson.name %> </option>
+    <% end %>
+  </select></h3>
+  <button class="btn btn-success">Add Lesson to Section</button>
+</form>
+</div>
+<br></br>
+
 <p><a href='/sections/<%= @section.id %>'
   data-confirm='Are you sure?'
   data-method='delete'

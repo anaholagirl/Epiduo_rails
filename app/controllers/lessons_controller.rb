@@ -29,6 +29,7 @@ end
   end
 
   def edit
+    @sections = Section.all
     @lesson = Lesson.find(params[:id])
     render('lessons/edit.html.erb')
   end

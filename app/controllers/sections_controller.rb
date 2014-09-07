@@ -28,6 +28,7 @@ class SectionsController < ApplicationController
   end
 
   def edit
+    @lessons = Lesson.all
     @section = Section.find(params[:id])
     render('sections/edit.html.erb')
   end

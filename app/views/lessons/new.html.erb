@@ -15,6 +15,12 @@
   <label for="lesson_number">Lesson Number</label>
   <input id="lesson_number" name="lesson[lesson_number]" type="integer" value="<%=@lesson.lesson_number %>">
   <br></br>
+  <label for='section_num'>Section Name</label>
+  <select id='section_num' name='lesson[section_id]'>
+    <% @sections.each do |section| %>
+      <option value='<%= section.name %>'><%= section.name %></option>
+    <% end %>
+  </select>
   <label for="content">Lesson Content</label>
   <input id="content" name="lesson[content]" type="text" value="<%=@lesson.content%>">
   <br></br>
