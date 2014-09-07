@@ -1,4 +1,12 @@
-<h1> Learn how to write Epic Code at Epicodus! </h1>
+<h1> Lessons </h1>
 
-<p> Follow along on the lessons below and you can write epic code: </p>
+<ul>
+  <% @lessons.each do |lesson| %>
+    <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+  <% end %>
+</ul>
+
+<p><a href="/lessons/new" class="btn btn-success">Create a new Lesson</a></p>
+<p><a href="/" class="btn btn-primary">Return to Table of Contents</a></p>
+
 

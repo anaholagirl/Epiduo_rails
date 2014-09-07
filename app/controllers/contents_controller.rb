@@ -1,7 +1,6 @@
 class ContentsController < ApplicationController
 
   def index
-    @contents = Content.all
-    render('contents/index.html.erb')
+    render('contents/content.html.erb')
   end
 end
