@@ -15,13 +15,14 @@ class SectionsController < ApplicationController
     @section = Section.create(params[:section])
       if @section.save
         flash[:notice] = "Section was successfully added!"
-        redirect_to("/sections")
+        render("sections/success.html.erb")
       else
         render('sections/new.html.erb')
       end
   end
 
   def show
+    @lessons = Lesson.all
     @section = Section.find(params[:id])
     render('sections/show.html.erb')
   end
@@ -35,7 +36,8 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
       if @section.update(params[:section])
         flash[:notice] = "Update was successful!"
-        redirect_to("/sections/#{@section.id}")
+        # redirect_to("/sections/#{@section.id}")
+        render('sections/success.html.erb')
       else
         render('sections/edit.html.erb')
       end
@@ -45,6 +47,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     @section.destroy
     flash[:notice] = "Section has been successfully removed!"
-    redirect_to('/sections')
+    # redirect_to('/sections')
+    render('sections/destroy.html.erb')
   end
 end

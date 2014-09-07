@@ -12,4 +12,6 @@
 <form action="/sections/<%= @section.id %>" method="post">
   <label for="section_name">Section Name</label>
   <input id="section_name" name="section[name]" type="text" value="<%= @section.name %>">
-  <button class=btn btn-small btn-primary>Create Section</button>
+  <button class="btn btn-success">Create Section</button>
+
+  <p><a href='/sections' class='btn btn-primary'>Return to Section Homepage</a></p>

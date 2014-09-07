@@ -1,1 +1,24 @@
 <h1> Edit your Sections</h1>
+
+<% if @section.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @section.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action='/sections/<%= @section.id %>' method='post'>
+  <input name='_method' type='hidden' value='patch'>
+  <label for='section_name'>Section Name</label>
+  <input id='section_name' name='section[name]' type='text' value='<%= @section.name %>'>
+  <button class='btn btn-success'>Update Section</button>
+</form>
+
+<p><a href='/sections/<%= @section.id %>'
+  data-confirm='Are you sure?'
+  data-method='delete'
+  rel='nofollow' class='btn btn-info'>Delete this Section</a></p>
+
+<p><a href='/sections' class='btn btn-primary'>Return to Section Homepage</a></p>

@@ -2,6 +2,9 @@
 
 <ul>
   <% @sections.each do |section| %>
-    <li><%= section.name %></li>
+    <li><a href="/sections/<%= section.id %>"><%= section.name %></a></li>
   <% end %>
 </ul>
+
+<p><a href="/sections/new" class="btn btn-success">Create a new Section</a></p>
+<p><a href="/" class="btn btn-primary">Return to Table of Contents</a></p>

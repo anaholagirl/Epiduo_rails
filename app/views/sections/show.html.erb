@@ -1,12 +1,14 @@
-<h1> Here are all the sections and their lessons: </h1>
+<h1> Here is the Section and its Lessons: </h1>
 
-<ul>
-  <% sections.each do |section| %>
-    <li><%= section.name %></li>
-      <ul>
-        <% section.lessons.each do |lesson| %>
-          <li><%= lesson.name %></li>
-        <% end %>
-      </ul>
-  <% end %>
-</ul>
+
+
+<h2>Section Name: <%= @section.name %> </h2>
+  <ul>
+    <% @section.lessons.each do |lesson| %>
+      <li><%= lesson.name %></li>
+    <% end %>
+  </ul>
+
+<p><a href='/sections/<%=@section.id%>/edit' class='btn btn-info'>Edit this Section</a></p>
+
+<p><a href='/sections' class='btn btn-primary'>Return to the Section Homepage</a></p>
