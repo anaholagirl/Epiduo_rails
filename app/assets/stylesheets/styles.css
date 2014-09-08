@@ -1,0 +1,14 @@
+h1 {
+  text-align:center;
+
+}
+
+a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+button {
+  border-radius: 5px;
+
+}
