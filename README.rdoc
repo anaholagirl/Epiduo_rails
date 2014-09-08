@@ -1,28 +1,11 @@
-== README
+== ##Epiduo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Author: Linda Gibson, Epicodus Rails Minimal Magic Assessment
 
-Things you may want to cover:
+###This program was created to mimic the LearnHowToProgram website for Epicodus.  It allows a user to create lessons and sections for an instruction website.  Its homepage is a table of contents which lists the sections and the lessons associated with those sections.
 
-* Ruby version
+###This is a work in progress.  There are no known bugs, but the Chapters portion has not been added yet and the ability to go to the next or previous lesson has yet to be completed.
 
-* System dependencies
+###The app is deployed onto Heroku and can be viewed there.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Copyright 2014 Linda Gibson
