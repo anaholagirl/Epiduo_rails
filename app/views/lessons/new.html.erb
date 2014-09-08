@@ -3,20 +3,15 @@
 <%= render('layouts/errors', :object => @lesson) %>
 
 <form action="/lessons/<%= @lesson.id %>" method="post">
-  <label for="lesson_name">Lesson Name</label>
-  <input id="lesson_name" name="lesson[name]" type="text" value="<%= @lesson.name %>">
-  <label for="lesson_number">Lesson Number</label>
-  <input id="lesson_number" name="lesson[lesson_number]" type="integer" value="<%=@lesson.lesson_number %>">
-  <br></br>
   <label for='section_number'>Section Name</label>
   <select id='section_number' name='lesson[section_id]'>
     <% @sections.each do |section| %>
       <option value="<%= section.id %>"><%= section.name %></option>
     <% end %>
   </select>
-  <label for="content">Lesson Content</label>
-  <input id="content" name="lesson[content]" type="text" value="<%=@lesson.content%>">
-  <br></br>
+
+  <%= render('form') %>
+
   <button class="btn btn-success">Create Lesson</button>
   <br></br>
 </form>
