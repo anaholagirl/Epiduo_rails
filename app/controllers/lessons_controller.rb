@@ -14,7 +14,7 @@ class LessonsController < ApplicationController
   def create
     @sections = Section.all
     @lesson = Lesson.create(params[:lesson])
-    if @lesson.save
+    if @lesson.save(params[:lesson])
       flash[:notice] = "Lesson was successfully added!"
       redirect_to("/lessons/#{@lesson.id}")
     else

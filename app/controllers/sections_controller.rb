@@ -12,10 +12,12 @@ class SectionsController < ApplicationController
   end
 
   def create
+    @lessons = Lesson.all
     @section = Section.create(params[:section])
       if @section.save
         flash[:notice] = "Section was successfully added!"
-        render("sections/success.html.erb")
+        # render("sections/success.html.erb")
+        redirect_to("/sections/#{@section.id}")
       else
         render('sections/new.html.erb')
       end
@@ -48,7 +50,6 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     @section.destroy
     flash[:notice] = "Section has been successfully removed!"
-    # redirect_to('/sections')
     render('sections/destroy.html.erb')
   end
 end

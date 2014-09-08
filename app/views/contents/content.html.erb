@@ -17,8 +17,21 @@
 
 <h1> Learn how to write Epic Code at Epicodus! </h1>
 
-<h2> Follow along on the lessons below and you can write epic code: </h2>
+<h2> Follow along on the lessons below and you can write your own epic code: </h2>
 
 <h3> Table of Contents: </h3>
+
+<ul>
+  <% @sections.each do |section| %>
+    <li><%= section.name %></li>
+      <ul>
+        <% @lessons.each do |lesson| %>
+          <% if lesson.section_id == section.id %>
+          <li><%= lesson.name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+</ul>
 
 

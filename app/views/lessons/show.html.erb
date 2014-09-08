@@ -4,13 +4,11 @@
 
 <h2>Lesson Name: <%= @lesson.name %> </h2>
 <h3>Lesson Number: <%= @lesson.lesson_number %> </h3>
-<!-- <h3>Section: <%=@lesson.section_id.name%></h3> -->
+
 <h3>Lesson Content:<h3>
   <p><%= @lesson.content %></p>
 
 
 <p><a href='/lessons/<%=@lesson.id%>/edit' class='btn btn-success'>Edit this Lesson</a></p>
-
-<p><a href='/lessons/<%=@lesson.id%>/edit' class='btn btn-info'> Add a section to this Lesson </a></p>
 
 <p><a href='/lessons' class='btn btn-primary'>Return to the Lesson Homepage</a></p>

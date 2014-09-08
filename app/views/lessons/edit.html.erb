@@ -24,19 +24,6 @@
 </form>
 <br></br>
 
-<h2>Choose a section to add this lesson to:</h2>
-<div style="padding-bottom:20">
-  <form id="sections" role="form" action="/sections" method="post">
-    <h3>Sections: <select form="lessons" name="lesson[section_id]" style="width:250px;margin-right:20px">
-    <% @sections.each do |section| %>
-      <option value="<%=section.id %>"> <%= section.name %> </option>
-    <% end %>
-  </select></h3>
-  <button class="btn btn-warning">Add to Section</button>
-</form>
-</div>
-<br></br>
-
 <p><a href='/lessons/<%= @lesson.id %>'
   data-confirm='Are you sure you want to delete?'
   data-method='delete'

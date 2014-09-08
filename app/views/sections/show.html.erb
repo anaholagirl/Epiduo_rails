@@ -4,10 +4,14 @@
 
 <h2>Section Name: <%= @section.name %> </h2>
   <ul>
-    <% @section.lessons.each do |lesson| %>
-      <li><%= lesson.name %></li>
+    <% @lessons.each do |lesson| %>
+      <% if lesson.section_id == @section.id %>
+        <li><%= lesson.name %></li>
+        <% end %>
     <% end %>
   </ul>
+
+<br></br>
 
 <p><a href='/sections/<%=@section.id%>/edit' class='btn btn-success'>Edit this Section</a></p>
 
