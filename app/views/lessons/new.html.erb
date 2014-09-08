@@ -1,13 +1,6 @@
 <h1> Create a new Lesson </h1>
 
-<% if @lesson.errors.any? %>
-  <h3>Please fix these errors:</h3>
-  <ul>
-    <% @lesson.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render('layouts/errors', :object => @lesson) %>
 
 <form action="/lessons/<%= @lesson.id %>" method="post">
   <label for="lesson_name">Lesson Name</label>
